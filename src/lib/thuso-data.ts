@@ -36,8 +36,8 @@ export const CONFIDENCE_LABEL: Record<Language["confidence"], string> = {
   developing: "Developing — please review",
 };
 
-export const getLanguage = (code: LanguageCode) =>
-  LANGUAGES.find((l) => l.code === code) ?? LANGUAGES[0];
+export const getLanguage = (code: LanguageCode): Language =>
+  LANGUAGES.find((l) => l.code === code) ?? (LANGUAGES[0] as Language);
 
 export const RESPONSIBLE_AI_NOTICE =
   "AI-generated content may contain inaccuracies or bias. Please review before using for important workplace decisions or communication. For translations, treat uncertain results as a draft, not a final version.";
