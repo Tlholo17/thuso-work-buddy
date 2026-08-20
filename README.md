@@ -1,279 +1,99 @@
-# Thuso AI: Your Workplace Helper
-
-Build a modern, responsive web application called "Thuso AI" — a multilingual AI-
-
-powered workplace productivity assistant for South African professionals. The name
-
-"Thuso" means "help" in Sesotho, so the whole product should feel like a warm,
-
-capable helper — not a stiff corporate enterprise tool.
-
-IMPORTANT SCOPE NOTE: build this as a fully working front-end app using realistic
-
-SAMPLE DATA and SIMULATED AI responses only. Do not connect to any external AI API,
-
-database, or backend service. Every "AI" output should come from pre-written
-
-sample responses or simple local logic (e.g. template strings, basic keyword
-
-matching, or randomised picks from a set of realistic pre-written outputs) so the
-
-whole app runs entirely in the browser with no API keys and no backend setup.
-
-PRODUCT SUMMARY
-
-Thuso AI is ONE integrated platform (single dashboard, not separate apps) that
-
-brings together AI-powered workplace tools with support for South Africa's 11
-
-official languages (English, Afrikaans, isiZulu, isiXhosa, Sepedi, Setswana,
-
-Sesotho, siSwati, Xitsonga, Tshivenda, isiNdebele).
-
-PAGES / FEATURES TO BUILD (all inside the dashboard, all fully click-through)
-
-1. Daily Brief (default home page after "login" — no real auth needed, just land
-
-   here) — a feed showing 3-4 sample pending action items, 2 sample drafted
-
-   emails awaiting review, and 4-5 sample prioritised tasks for today, pulled
-
-   from realistic placeholder content, not empty placeholders
-
-2. Smart Email Generator
-
-   - Input: purpose of email (textarea), tone selector (Professional, Formal,
-
-     Friendly, Persuasive), language selector (all 11 languages, shown as pills)
-
-   - On "Generate," show a short simulated loading state (1-2 seconds), then
-
-     display a realistic, well-written sample email in an editable text box
-
-     matching the chosen tone (write 4 different realistic sample emails, one
-
-     per tone, and swap between them based on the tone selected)
-
-   - Copy, Regenerate (cycles to a slightly different sample), and "Save as
-
-     template" buttons, all functional in the UI (regenerate can just reshuffle
-
-     between 2-3 sample variants)
-
-3. Meeting Notes Summarizer
-
-   - Input: paste meeting notes (textarea, pre-filled with a realistic sample
-
-     you write), input/output language selectors
-
-   - On "Summarize," show a structured output: Summary, Key Decisions, Action
-
-     Items (each with a "Send to Task Planner" button that actually adds it to
-
-     the Task Planner page's state), Deadlines, Responsible People, Follow-ups
-
-   - Use one well-written realistic sample summary as the output
-
-4. AI Task Planner
-
-   - A task board grouped by High / Medium / Low priority
-
-   - Pre-populate with 5-6 realistic sample tasks plus any items sent over from
-
-     the Meeting Summarizer (shared app state, no backend needed — just React
-
-     state/context)
-
-   - Include a short plain-language "why this was prioritised" note per task
-
-   - Show a simple suggested daily schedule list below the board
-
-5. AI Research Assistant
-
-   - Input: topic or pasted article text, output language selector
-
-   - On "Research," show a structured sample output: key points, a "plain
-
-     terms" explainer, and 3-5 actionable recommendations, plus a source-note
-
-     area and a small disclaimer that this is an AI-generated summary
-
-   - Write one strong, realistic sample output
-
-6. Multilingual AI Workplace Assistant (chatbot)
-
-   - Persistent chat launcher (bottom-right) + full chat page
-
-   - Pre-script 6-8 realistic exchanges (user message + assistant reply) covering
-
-     writing help, translation, meeting prep, and general productivity questions
-
-   - If the user types something not in the script, show a friendly generic
-
-     response acknowledging the request rather than an error
-
-STRUCTURE REQUIREMENTS
-
-- Persistent left sidebar navigation with icons + labels for: Daily Brief, Email
-
-  Generator, Meeting Summarizer, Task Planner, Research Assistant, Assistant
-
-  (chat), Settings
-
-- Fully responsive: sidebar collapses into a bottom tab bar or hamburger drawer
-
-  on mobile; all input/output panels stack vertically on small screens
-
-- Every AI output shown in an editable field (not locked text), with Copy and
-
-  Regenerate actions
-
-- Clear loading states (skeleton or friendly progress messages, not a generic
-
-  spinner) using a short local delay (setTimeout), and one example error state
-
-  with plain-language recovery guidance
-
-- A visible Responsible AI disclaimer footer/banner: "AI-generated content may
-
-  contain inaccuracies or bias. Please review before using for important
-
-  workplace decisions or communication. For translations, treat uncertain
-
-  results as a draft, not a final version."
-
-- A small confidence indicator next to the language selector (e.g. "Strong
-
-  support" for English/Afrikaans/isiZulu/isiXhosa, "Developing — please review"
-
-  for the others) — this can be a static lookup table in the code, no logic
-
-  needed
-
-- A Settings page with a default-language selector and the full Responsible AI
-
-  notice text
-
-DESIGN DIRECTION — this is not a generic SaaS look
-
-The brand should feel young, modern, confident, and distinctly South African —
-
-warm and human rather than corporate or "enterprise software" stiff, while still
-
-reading as professional and trustworthy.
-
-Color palette (use as CSS variables):
-
-- Canvas / base background: warm bone-white #FAF8F4
-
-- Ink / primary text: deep aubergine-charcoal #211829
-
-- Primary accent (main CTAs, highlights): marigold-amber #F2A93B
-
-- Secondary/depth color (sidebar, header, dark sections): rich plum-violet #4B2E6F
-
-- Tertiary accent (success states, secondary actions): emerald-teal #1FA97E
-
-- Card/surface background (alternating with canvas): soft lavender-grey #EDE9F2
-
-Typography:
-
-- Display/heading font: a bold, geometric sans with personality and rounded
-
-  terminals (e.g. Clash Display, Bricolage Grotesque, or General Sans Bold)
-
-- Body font: a clean humanist sans (e.g. General Sans or Inter)
-
-- Utility/data font: a monospace (e.g. Space Mono or JetBrains Mono) for small
-
-  labels, timestamps, and language codes
-
-Layout:
-
-- Bento-grid style dashboard cards with generously rounded corners (16-20px),
-
-  soft layered shadows instead of hard borders
-
-- Generous whitespace, comfortable line-height
-
-- Sidebar uses the plum-violet background with white/cream text and an amber
-
-  highlight for the active item
-
-Signature element (make this the one memorable, recognizable piece of the UI):
-
-Language is shown throughout the app as tactile, rounded "pills" — small colored
-
-chips with the language name — used for the language selector, the confidence
-
-indicator, and anywhere a language is referenced. Give each of the 11 languages
-
-a consistent, distinct pill color used everywhere it appears.
-
-Motion: subtle only — a gentle fade/slide when AI output appears, a soft pulse
-
-on the chat launcher when a new suggestion is ready.
-
-Voice and copy: plain, active, second-person language. Buttons say what they do
-
-("Generate email," "Send to Task Planner," not "Submit"). Empty states feel like
-
-an invitation, not a blank silence. Error messages explain what happened and
-
-what to do next.
-
-
-the application must include the following features:
-
- 
-
- 1. Smart Email Generator
-
-	•	Generate professional emails
-
-	•	Support different tones (formal, friendly, persuasive)
-
-2.⁠ ⁠Meeting Notes Summarizer
-
-	•	Summarize long notes
-
-	•	Extract action items, decisions, and deadlines
-
-3.⁠ ⁠AI Task Planner / Scheduler
-
-	•	Generate daily or weekly schedules
-
-	•	Prioritize tasks effectively
-
-4.⁠ ⁠AI Research Assistant
-
-	•	Summarize topics/articles
-
-	•	Provide insights and recommendations
-
-5.⁠ ⁠AI Chatbot Interface
-
-	•	Interactive AI workplace assistant
-
-	•	Handle user prompts and responses
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/396a49e1-7b66-41ad-8452-628f0e3af0de).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+Thuso AI
+Multilingual AI-Powered Workplace Productivity Assistant
+
+Thuso AI is an AI-powered workplace productivity platform designed for the South African workplace. The platform combines practical workplace productivity tools with multilingual AI support, letting users generate emails, summarise meetings, plan tasks, research topics, and interact with an AI workplace assistant in their preferred language.
+The name Thuso means “help” or “assistance”, reflecting the purpose of the platform: helping people work smarter while communicating in a language they are comfortable using.
+
+Project Overview
+Many AI productivity tools are built primarily around English, which creates accessibility challenges for people who communicate in South African languages.
+Thuso AI explores how artificial intelligence can improve workplace productivity while supporting genuine multilingual communication. The application brings five AI-powered workplace tools together into one single, integrated dashboard — not five separate apps.
+
+Features
+1. Smart Email Generator
+Helps users create professional workplace emails.
+●	Describe the purpose of an email
+●	Select a preferred tone: Professional, Formal, Friendly, or Persuasive
+●	Select a language
+●	Generate, edit, copy, and regenerate the response
+●	Save a generated email as a reusable template
+2. Meeting Notes Summarizer
+Converts lengthy meeting notes into structured, actionable information.
+●	Meeting summaries
+●	Key decisions
+●	Action items — each with a one-click “Send to Task Planner” action
+●	Deadlines
+●	Responsible people
+●	Follow-up items
+Users can select their preferred input and output language.
+3. AI Task Planner
+Helps users organise and prioritise workplace responsibilities.
+●	Organise tasks and identify priorities
+●	Categorise tasks as High, Medium, or Low priority
+●	Consider deadlines and urgency
+●	Suggest daily or weekly schedules
+●	Explain, in plain language, why a task was prioritised as it was
+Tasks can be entered directly or received automatically from the Meeting Notes Summarizer.
+4. AI Research Assistant
+Helps users quickly understand a topic or article without reading the whole thing.
+●	Summarise a topic, article, or pasted text
+●	Highlight key points in plain language
+●	Provide 3–5 actionable insights or recommendations relevant to the workplace
+●	Note sources, with a clear disclaimer that outputs are AI-generated summaries, not verbatim reproductions
+5. Multilingual AI Workplace Assistant
+An interactive conversational interface, available from any page in the app, for general workplace productivity help.
+●	Workplace communication and brainstorming
+●	Writing and summarisation
+●	Task planning and meeting preparation
+●	Translation between South Africa’s official languages
+●	General productivity questions
+Daily Brief (Home view)
+The default landing view after login. Rather than presenting four separate tools, it surfaces what needs attention today in one glanceable feed: pending action items from recent meeting summaries, drafted emails awaiting review, and today’s prioritised tasks. This is what makes Thuso AI feel like one integrated assistant rather than a set of unconnected generators.
+Multilingual Support
+Thuso AI is designed with South Africa’s multilingual environment in mind, and aims to support all 11 official languages:
+●	English
+●	Afrikaans
+●	isiZulu
+●	isiXhosa
+●	Sepedi
+●	Setswana
+●	Sesotho
+●	siSwati
+●	Xitsonga
+●	Tshivenda
+●	isiNdebele
+AI language quality is not identical across all 11 languages. Thuso AI shows a confidence indicator next to the language selector (“Strong support” vs “Developing — please review output”) so users know when to double-check a result rather than assume perfect accuracy. This is a deliberate, visible extension of the platform’s Responsible AI commitment, not just a disclaimer in the fine print.
+
+User Interface & Design Direction
+Thuso AI uses a modern, professional SaaS-style interface, designed to feel young, warm, and approachable rather than stiff or corporate — while remaining trustworthy for workplace use.
+●	Responsive dashboard with persistent sidebar navigation
+●	Bento-grid style cards with rounded corners and soft shadows
+●	Warm bone-white base, plum-violet sidebar, marigold-amber primary accent, emerald-teal secondary accent
+●	Language shown throughout the app as consistent, colour-coded “pills” — the product’s signature visual element
+●	Mobile-friendly design with a collapsing sidebar / bottom navigation on small screens
+●	Editable AI outputs, clear loading states, and plain-language error states
+●	Copy-to-clipboard functionality on every AI output
+
+Setup Instructions
+1. Clone the repository
+git clone https://github.com/YOUR-USERNAME/thuso-ai-workplace-assistant.git
+2. Open the project
+cd thuso-ai-workplace-assistant
+3. Install dependencies
+npm install
+4. Start the development server
 npm run dev
-```
+5. Open the local development URL
+Use the URL provided by the development server to access Thuso AI.
+Live Application
+Live Demo: add the published Lovable application link here once deployed.
+Project Structure
+thuso-ai-workplace-assistant/
+├── public/
+├── src/
+├── README.md
+├── package.json
+└── ...
+Team Members
+●	Tlholelo Bokgobelo — Developer / Designer
+AI Skills Acceleration Programme Project
+
