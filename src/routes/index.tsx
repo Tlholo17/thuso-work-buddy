@@ -106,9 +106,7 @@ function DailyBrief() {
                 </div>
                 <p className="mt-3 font-display text-base font-semibold">{d.subject}</p>
                 <p className="font-mono text-[11px] text-foreground/55">To {d.to}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {d.preview}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.preview}</p>
                 <Link
                   to="/email"
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-plum hover:underline"

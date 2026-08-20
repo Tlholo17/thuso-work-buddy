@@ -89,11 +89,7 @@ export function EditableOutput({
             </Button>
           )}
           <Button variant="secondary" size="sm" onClick={copy}>
-            {copied ? (
-              <Check className="mr-1.5 size-3.5" />
-            ) : (
-              <Copy className="mr-1.5 size-3.5" />
-            )}
+            {copied ? <Check className="mr-1.5 size-3.5" /> : <Copy className="mr-1.5 size-3.5" />}
             {copied ? "Copied" : "Copy"}
           </Button>
         </div>

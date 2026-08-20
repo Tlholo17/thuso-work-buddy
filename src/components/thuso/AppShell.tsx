@@ -103,9 +103,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       )}
 
       <main className="lg:pl-72">
-        <div className="mx-auto w-full max-w-6xl px-4 pt-6 pb-40 sm:px-8 lg:pb-28">
-          {children}
-        </div>
+        <div className="mx-auto w-full max-w-6xl px-4 pt-6 pb-40 sm:px-8 lg:pb-28">{children}</div>
         <footer className="lg:pl-0">
           <div className="mx-auto mb-24 w-full max-w-6xl px-4 sm:px-8 lg:mb-8">
             <p className="rounded-2xl bg-surface px-5 py-4 text-xs leading-relaxed text-foreground/70">

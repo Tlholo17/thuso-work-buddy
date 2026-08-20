@@ -50,8 +50,8 @@ function SettingsPage() {
         <section className="card-bento">
           <h2 className="font-display text-lg font-bold">Language support levels</h2>
           <p className="mt-1 mb-5 text-sm text-muted-foreground">
-            Where support is still developing, treat output as a draft and ask a
-            first-language speaker to check it.
+            Where support is still developing, treat output as a draft and ask a first-language
+            speaker to check it.
           </p>
           <div className="space-y-4">
             {(["strong", "developing"] as const).map((level) => (
@@ -71,24 +71,20 @@ function SettingsPage() {
 
         <section className="card-bento lg:col-span-2">
           <h2 className="font-display text-lg font-bold">Responsible AI notice</h2>
-          <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-            {RESPONSIBLE_AI_NOTICE}
-          </p>
+          <p className="mt-3 text-sm leading-relaxed text-foreground/80">{RESPONSIBLE_AI_NOTICE}</p>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+            <li>Thuso drafts; you decide. Read every output before it leaves your hands.</li>
             <li>
-              Thuso drafts; you decide. Read every output before it leaves your hands.
+              Do not paste personal information, ID numbers or payroll details you would not put in
+              a shared document.
             </li>
             <li>
-              Do not paste personal information, ID numbers or payroll details you would
-              not put in a shared document.
+              Translations into developing-support languages need a first-language reviewer for
+              anything about safety, pay or discipline.
             </li>
             <li>
-              Translations into developing-support languages need a first-language
-              reviewer for anything about safety, pay or discipline.
-            </li>
-            <li>
-              Research summaries are starting points. Verify facts, dates and figures
-              against the original source.
+              Research summaries are starting points. Verify facts, dates and figures against the
+              original source.
             </li>
           </ul>
         </section>
@@ -97,8 +93,8 @@ function SettingsPage() {
           <h2 className="font-display text-lg font-bold">Saved templates</h2>
           {templates.length === 0 ? (
             <p className="mt-3 text-sm text-muted-foreground">
-              Nothing saved yet. Generate an email you like and choose "Save as template"
-              — it will wait for you here.
+              Nothing saved yet. Generate an email you like and choose "Save as template" — it will
+              wait for you here.
             </p>
           ) : (
             <ul className="mt-4 space-y-3">

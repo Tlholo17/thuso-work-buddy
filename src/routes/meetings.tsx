@@ -6,11 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { EditableOutput, PageHeader, ThinkingState } from "@/components/thuso/AiOutput";
 import { LanguageSelector } from "@/components/thuso/LanguagePill";
-import {
-  MEETING_SUMMARY,
-  SAMPLE_MEETING_NOTES,
-  type LanguageCode,
-} from "@/lib/thuso-data";
+import { MEETING_SUMMARY, SAMPLE_MEETING_NOTES, type LanguageCode } from "@/lib/thuso-data";
 import { useThuso } from "@/lib/thuso-store";
 
 export const Route = createFileRoute("/meetings")({
@@ -79,16 +75,8 @@ function MeetingSummarizer() {
               className="rounded-2xl border-none bg-surface/60 p-4 text-sm leading-relaxed"
             />
           </div>
-          <LanguageSelector
-            value={inputLang}
-            onChange={setInputLang}
-            label="Notes are in"
-          />
-          <LanguageSelector
-            value={outputLang}
-            onChange={setOutputLang}
-            label="Summarise into"
-          />
+          <LanguageSelector value={inputLang} onChange={setInputLang} label="Notes are in" />
+          <LanguageSelector value={outputLang} onChange={setOutputLang} label="Summarise into" />
           <Button size="lg" className="w-full rounded-full" onClick={run}>
             Summarise the meeting
           </Button>
@@ -97,21 +85,15 @@ function MeetingSummarizer() {
         <div className="space-y-5">
           {state === "idle" && (
             <div className="card-bento flex min-h-56 flex-col justify-center text-center">
-              <p className="font-display text-lg font-semibold">
-                Ready when your notes are
-              </p>
+              <p className="font-display text-lg font-semibold">Ready when your notes are</p>
               <p className="mt-2 text-sm text-muted-foreground">
-                We've pre-filled a real-looking sample so you can see exactly what comes
-                back.
+                We've pre-filled a real-looking sample so you can see exactly what comes back.
               </p>
             </div>
           )}
           {state === "loading" && (
             <ThinkingState
-              messages={[
-                "Reading the meeting…",
-                "Finding decisions, owners and dates.",
-              ]}
+              messages={["Reading the meeting…", "Finding decisions, owners and dates."]}
             />
           )}
           {state === "done" && (

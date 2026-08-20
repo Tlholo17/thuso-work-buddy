@@ -1,15 +1,5 @@
 export type LanguageCode =
-  | "en"
-  | "af"
-  | "zu"
-  | "xh"
-  | "nso"
-  | "tn"
-  | "st"
-  | "ss"
-  | "ts"
-  | "ve"
-  | "nr";
+  "en" | "af" | "zu" | "xh" | "nso" | "tn" | "st" | "ss" | "ts" | "ve" | "nr";
 
 export type Language = {
   code: LanguageCode;
@@ -332,12 +322,12 @@ export const CHAT_SCRIPT: { keywords: string[]; reply: string }[] = [
   {
     keywords: ["translate", "isizulu", "zulu", "afrikaans", "xhosa", "translation"],
     reply:
-      "Here is an isiZulu draft of your notice:\n\n**\"Sicela bonke abasebenzi baqaphele ukuthi amahora omsebenzi ashintshile. Sizoqala ngo-08:00 futhi siphume ngo-16:30 kusukela ngoMsombuluko.\"**\n\nThis language has strong support, but please still have a first-language speaker glance over it before it goes to all staff — treat it as a solid draft, not a final version.",
+      'Here is an isiZulu draft of your notice:\n\n**"Sicela bonke abasebenzi baqaphele ukuthi amahora omsebenzi ashintshile. Sizoqala ngo-08:00 futhi siphume ngo-16:30 kusukela ngoMsombuluko."**\n\nThis language has strong support, but please still have a first-language speaker glance over it before it goes to all staff — treat it as a solid draft, not a final version.',
   },
   {
     keywords: ["email", "write", "draft", "reply to"],
     reply:
-      "Happy to help. Here is a short, professional opener you can build on:\n\n\"Hi Naledi, thank you for flagging the delay. I have reworked the schedule and the new dates are below — the go-live date is unchanged.\"\n\nWant me to make it warmer, more formal, or more persuasive? You can also open the Email Generator for a full draft with tone and language options.",
+      'Happy to help. Here is a short, professional opener you can build on:\n\n"Hi Naledi, thank you for flagging the delay. I have reworked the schedule and the new dates are below — the go-live date is unchanged."\n\nWant me to make it warmer, more formal, or more persuasive? You can also open the Email Generator for a full draft with tone and language options.',
   },
   {
     keywords: ["meeting", "prep", "agenda", "prepare"],

@@ -1,10 +1,5 @@
 import { cn } from "@/lib/utils";
-import {
-  CONFIDENCE_LABEL,
-  LANGUAGES,
-  getLanguage,
-  type LanguageCode,
-} from "@/lib/thuso-data";
+import { CONFIDENCE_LABEL, LANGUAGES, getLanguage, type LanguageCode } from "@/lib/thuso-data";
 
 export function LanguagePill({
   code,
@@ -30,9 +25,7 @@ export function LanguagePill({
         "inline-flex items-center gap-1.5 rounded-full font-medium transition-all",
         size === "sm" ? "px-2.5 py-0.5 text-xs" : "px-3.5 py-1.5 text-sm",
         onClick && "hover:-translate-y-0.5 hover:shadow-soft",
-        active
-          ? "bg-foreground text-background shadow-soft"
-          : "bg-surface text-foreground/80",
+        active ? "bg-foreground text-background shadow-soft" : "bg-surface text-foreground/80",
         className,
       )}
     >
@@ -55,9 +48,7 @@ export function ConfidenceChip({ code }: { code: LanguageCode }) {
         strong ? "bg-accent/15 text-accent" : "bg-primary/20 text-foreground/70",
       )}
     >
-      <span
-        className={cn("size-1.5 rounded-full", strong ? "bg-accent" : "bg-primary")}
-      />
+      <span className={cn("size-1.5 rounded-full", strong ? "bg-accent" : "bg-primary")} />
       {CONFIDENCE_LABEL[lang.confidence]}
     </span>
   );

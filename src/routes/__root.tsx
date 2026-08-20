@@ -81,10 +81,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Thuso AI — Multilingual workplace assistant" },
-      { name: "description", content: "Thuso AI helps South African professionals write, summarise, plan and research — in all 11 official languages." },
+      {
+        name: "description",
+        content:
+          "Thuso AI helps South African professionals write, summarise, plan and research — in all 11 official languages.",
+      },
       { name: "author", content: "Thuso AI" },
       { property: "og:title", content: "Thuso AI — Multilingual workplace assistant" },
-      { property: "og:description", content: "Warm, capable AI help for South African workplaces, in all 11 official languages." },
+      {
+        property: "og:description",
+        content:
+          "Warm, capable AI help for South African workplaces, in all 11 official languages.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },

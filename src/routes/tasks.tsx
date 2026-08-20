@@ -64,8 +64,8 @@ function TaskPlanner() {
               <ul className="mt-4 space-y-3">
                 {list.length === 0 && (
                   <li className="rounded-2xl bg-surface/60 p-4 text-sm text-muted-foreground">
-                    Nothing here yet — a good sign. Send items over from the Meeting
-                    Summarizer when you need to.
+                    Nothing here yet — a good sign. Send items over from the Meeting Summarizer when
+                    you need to.
                   </li>
                 )}
                 {list.map((t) => (
@@ -90,12 +90,7 @@ function TaskPlanner() {
                         )}
                       </button>
                       <div>
-                        <p
-                          className={cn(
-                            "font-medium leading-snug",
-                            t.done && "line-through",
-                          )}
-                        >
+                        <p className={cn("font-medium leading-snug", t.done && "line-through")}>
                           {t.title}
                         </p>
                         <p className="font-mono text-[11px] text-foreground/55">

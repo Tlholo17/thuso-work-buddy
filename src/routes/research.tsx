@@ -28,9 +28,7 @@ export const Route = createFileRoute("/research")({
 
 function ResearchAssistant() {
   const { defaultLanguage } = useThuso();
-  const [topic, setTopic] = useState(
-    "Hybrid work policies in South African companies in 2026",
-  );
+  const [topic, setTopic] = useState("Hybrid work policies in South African companies in 2026");
   const [language, setLanguage] = useState<LanguageCode>(defaultLanguage);
   const [state, setState] = useState<"idle" | "loading" | "done">("idle");
   const [plain, setPlain] = useState(RESEARCH_OUTPUT.plainTerms);
@@ -127,8 +125,8 @@ function ResearchAssistant() {
               />
 
               <p className="rounded-2xl bg-surface px-5 py-4 text-xs leading-relaxed text-foreground/70">
-                This is an AI-generated summary built from sample material. Check the
-                facts and sources yourself before you use it in a report or a decision.
+                This is an AI-generated summary built from sample material. Check the facts and
+                sources yourself before you use it in a report or a decision.
               </p>
             </>
           )}

@@ -3,12 +3,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  EditableOutput,
-  PageHeader,
-  ThinkingState,
-  ErrorState,
-} from "@/components/thuso/AiOutput";
+import { EditableOutput, PageHeader, ThinkingState, ErrorState } from "@/components/thuso/AiOutput";
 import { LanguageSelector } from "@/components/thuso/LanguagePill";
 import { EMAIL_SAMPLES, TONES, type Tone, type LanguageCode } from "@/lib/thuso-data";
 import { useThuso } from "@/lib/thuso-store";
@@ -108,11 +103,7 @@ function EmailGenerator() {
 
           <LanguageSelector value={language} onChange={setLanguage} />
 
-          <Button
-            size="lg"
-            className="w-full rounded-full"
-            onClick={() => generate(variant)}
-          >
+          <Button size="lg" className="w-full rounded-full" onClick={() => generate(variant)}>
             Generate email
           </Button>
         </section>
@@ -122,8 +113,7 @@ function EmailGenerator() {
             <div className="card-bento flex h-full min-h-56 flex-col justify-center text-center">
               <p className="font-display text-lg font-semibold">Your draft lands here</p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Say what the email needs to do and Thuso will write the first version for
-                you.
+                Say what the email needs to do and Thuso will write the first version for you.
               </p>
             </div>
           )}

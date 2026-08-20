@@ -4,11 +4,7 @@ import {
   ConversationContent,
   ConversationScrollButton,
 } from "@/components/ai-elements/conversation";
-import {
-  Message,
-  MessageContent,
-  MessageResponse,
-} from "@/components/ai-elements/message";
+import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
 import {
   PromptInput,
   PromptInputTextarea,
@@ -41,10 +37,7 @@ export function ChatPanel({ compact = false }: { compact?: boolean }) {
   const send = useCallback((value: string) => {
     const trimmed = value.trim();
     if (!trimmed) return;
-    setMessages((prev) => [
-      ...prev,
-      { id: `u-${Date.now()}`, role: "user", text: trimmed },
-    ]);
+    setMessages((prev) => [...prev, { id: `u-${Date.now()}`, role: "user", text: trimmed }]);
     setText("");
     setStatus("submitted");
     setTimeout(() => {
@@ -83,9 +76,7 @@ export function ChatPanel({ compact = false }: { compact?: boolean }) {
               </MessageContent>
             </Message>
           ))}
-          {status === "submitted" && (
-            <Shimmer className="text-sm">Thuso is thinking…</Shimmer>
-          )}
+          {status === "submitted" && <Shimmer className="text-sm">Thuso is thinking…</Shimmer>}
         </ConversationContent>
         <ConversationScrollButton />
       </Conversation>
