@@ -68,7 +68,7 @@ export function ChatPanel({ compact = false }: { compact?: boolean }) {
               <MessageContent
                 className={
                   m.role === "user"
-                    ? "rounded-2xl bg-plum px-4 py-2.5 text-plum-foreground"
+                    ? "rounded-2xl bg-plum! px-4 py-2.5 text-plum-foreground!"
                     : "bg-transparent px-0 text-foreground"
                 }
               >
